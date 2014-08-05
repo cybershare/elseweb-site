@@ -1910,6 +1910,13 @@ ul#filters > .active > span {
     background-color: #FF4900;
 }
 
+.nav-pills>li.inactive>a, .nav-pills>li.inactive>a:hover, .nav-pills>li.inactive>a:focus {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #8a8b8b;
+    pointer-events: none;
+}
+
 .tab-menu .nav>li>a:hover, .nav>li>a:focus {
     text-decoration: none;
     color: #000;

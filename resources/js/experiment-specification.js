@@ -50,11 +50,11 @@
                     $scope.datasetURI = [];
                     $scope.datasetURI  = data.results.bindings;
                     $scope.assembleExperiment();   //call to assemble the experiment
-            }).error(function(data){
-                $.unblockUI();
-                $.noty.closeAll(); 
-                topNoty('error', 'Error retrieving datasets, try other parameters!');
-            });
+                 }).error(function(data){
+                    $.unblockUI();
+                    $.noty.closeAll(); 
+                    topNoty('error', 'Error retrieving datasets, try other parameters!');
+                });
                 
             }
             //alert(JSON.stringify($scope.datasets));   //For debugging

@@ -78,7 +78,7 @@
                                       </thead>
                                       <tbody>
                                           <tr ng-repeat = "dataset in datasets" >
-                                              <td><input ng-model="dataset.start" class="form-control blck-input datepicker" type="text" /></td>
+                                              <td><input  ng-model="dataset.start" class="form-control blck-input datepicker" type="text" /></td>
                                               <td><input ng-model="dataset.end" class="form-control blck-input datepicker" type="text" /></td>
                                               <td>
                                                   <select ng-change="dataCrtl.filterCharacteristics(dataset)" ng-options="o.entity.value as o.entity.value.slice(59)  for o in datasetOptions | unique:'entity.value'" ng-model="dataset.entity" class="form-control blck-input selEnt">
@@ -171,8 +171,8 @@
                                 <li ng-class="{ active: panel.isSelected(1) }">
                                     <a href ng-click="panel.selectTab(1)">Region</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(2) }">
-                                    <a href ng-click="panel.selectTab(2)">Species</a>
+                                <li ng-class="{ active: panel.isSelected(2), inactive: true }">
+                                    <a href ng-disabled="true" ng-click="panel.selectTab(2)">Species</a>
                                 </li>
                                 <li ng-class="{ active: panel.isSelected(3) }">
                                     <a href ng-click="panel.selectTab(3)">Datasets</a>
