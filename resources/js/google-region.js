@@ -82,11 +82,17 @@
 		//Request to check if there is any data in the selected region using the entity query URL and display message box.
                $http.jsonp(url_visko+entURL+callback_visko).success(function(data){
                     if(data.results.bindings == ""){
-			$( ".data-available" ).slideUp( "slow", function() {});
-			$( ".no-data" ).slideDown( "slow", function() {});
+			$( ".data-available" ).slideUp( "slow", function() {
+                            //$scope.speciesDisabled = true;
+                        });
+			$( ".no-data" ).slideDown( "slow", function() {
+                            
+                        });
 	             }
 		     else{
-                        $( ".no-data" ).slideUp( "slow", function() {});
+                        $( ".no-data" ).slideUp( "slow", function() {
+                            //$scope.speciesDisabled = false;
+                        });
                         $( ".data-available" ).slideDown( "slow", function() {});
 		     }                  
                 });

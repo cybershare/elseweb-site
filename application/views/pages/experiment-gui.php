@@ -151,17 +151,37 @@
                      </div>
                 </div>  
                
-               <div class="tab-panel" ng-show="panel.isSelected(5) || panel.isSelected(6)">
+               <div class="tab-panel" ng-show="false">
                     <div class="row experiment-row">
                         <div class="col-md-12 gray-bg">
                             <h4>Experiment Specification</h4>
                                 <div class="form-group">
                                     <textarea id="experiment" name="experiment" rows="22" style="width: 100%"></textarea>
-                                </div>
-                         </form>                        
+                                </div>                 
                         </div>
                     </div>    
                </div>
+               
+               
+               <div class="tab-panel" ng-show="panel.isSelected(5)">
+                    <div class="row experiment-row">
+                        <div class="col-md-12 gray-bg">
+                            <h4>Retrived Datasets</h4>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>DatasetURI</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat = "row in datasetURI_Test">
+                                            <td>{{row.dataset.value}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>    
+               </div>              
             
 
                 <div class="row experiment-row" ng-controller="SubmissionController as SubmissionCtrl">
@@ -171,19 +191,19 @@
                                 <li ng-class="{ active: panel.isSelected(1) }">
                                     <a href ng-click="panel.selectTab(1)">Region</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(2), inactive: true }">
+                                <li id="test" ng-class="{ active: panel.isSelected(2), inactive: experiment.coordinates == '' }">
                                     <a href ng-disabled="true" ng-click="panel.selectTab(2)">Species</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(3) }">
+                                <li ng-class="{ active: panel.isSelected(3), inactive: experiment.coordinates == '' }">
                                     <a href ng-click="panel.selectTab(3)">Datasets</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(4) }">
+                                <li ng-class="{ active: panel.isSelected(4), inactive: datasets == '' }">
                                     <a href ng-click="panel.selectTab(4)">Algorithm</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(5) }">
-                                    <a href ng-click="panel.selectTab(5); SubmissionCtrl.processAssemble()">Assemble</a>
+                                <li ng-class="{ active: panel.isSelected(5), inactive: experiment.algorithm == '' }">
+                                    <a href ng-click="panel.selectTab(5); SubmissionCtrl.processAssemble()">Review</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(6) }">
+                                <li ng-class="{ active: panel.isSelected(6), inactive: datasetURI == null }">
                                     <a href ng-click="panel.selectTab(6); SubmissionCtrl.submitExperiment('storeExperiment')">Submit</a>
                                 </li>
                             </ul>

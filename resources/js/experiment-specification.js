@@ -49,6 +49,7 @@
                 $http.jsonp(url_visk+datasetQuery+callback_visk).success(function(data){
                     $scope.datasetURI = [];
                     $scope.datasetURI  = data.results.bindings;
+                    $rootScope.datasetURI_Test = data.results.bindings;
                     $scope.assembleExperiment();   //call to assemble the experiment
                  }).error(function(data){
                     $.unblockUI();
