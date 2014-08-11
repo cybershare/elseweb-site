@@ -65,15 +65,13 @@
     <!--common script for all pages-->
     <script src="<?php echo base_url(JS."common-scripts.js");?>"></script>
     <script src="<?php echo base_url(JS."revulation-slide.js");?>"></script>
+    <script src="<?php echo base_url(JS."angular.min.js");?>"></script>
     <script src="<?php echo base_url(JS."main.js");?>"></script>
     <script type="text/javascript" src="<?php echo base_url(JS."register.js");?>"></script>
 
    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script> -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCotZjhwqwQ-4UjBvZHJNrQK0Yew5M2sOQ&sensor=true"></script> 
-  <!-- <script src="<?php echo base_url(JS."experimentgui.js");?>"></script> -->
   <script src="<?php echo base_url(JS."google-region.js");?>"></script> 
-    
-
 
   <script>
 

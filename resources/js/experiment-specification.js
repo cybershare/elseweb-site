@@ -29,7 +29,7 @@
                 $scope.ocurrence = [];
                 $scope.ocurrence = data.results.bindings;
                 //alert(JSON.stringify($scope.ocurrence));
-            }).error(function(data){
+            }).error(function(){
                 $.unblockUI();
                 $.noty.closeAll(); 
                 topNoty('error', 'Error retrieving species ocurrence id, try again later!');
@@ -51,7 +51,7 @@
                     $scope.datasetURI  = data.results.bindings;
                     $rootScope.datasetURI_Test = data.results.bindings;
                     $scope.assembleExperiment();   //call to assemble the experiment
-                 }).error(function(data){
+                 }).error(function(){
                     $.unblockUI();
                     $.noty.closeAll(); 
                     topNoty('error', 'Error retrieving datasets, try other parameters!');
@@ -69,7 +69,7 @@
 	    south  = boundsArray[2];
 	    west   = boundsArray[3];
             
-            var  datasetQuery = "define%20input%3Ainference%20%22http%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Fmappings%2Felseweb-mappings.owl%22%0Aprefix%20elseweb-data%3A%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-data.owl%23%3E%0Aprefix%20elseweb-edac%3A%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-edac.owl%23%3E%0Aprefix%20provo%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fprov%23%3E%0A%0Aselect%20distinct%20%3Fdataset%20%3Fmetadata%0Afrom%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Flinked-data%2Fedac%2Fservices%2Fwcs-services.owl%3E%0Awhere%0A%7B%0A%3Fdataset%20elseweb-data%3AcoversRegion%20%3Fregion.%0A%3Fregion%20elseweb-data%3AhasLeftLongitude%20%3Fllon.%0A%3Fregion%20elseweb-data%3AhasRightLongitude%20%3Frlon.%0A%3Fregion%20elseweb-data%3AhasLowerLatitude%20%3Fllat.%0A%3Fregion%20elseweb-data%3AhasUpperLatitude%20%3Fulat.%0A%0Afilter(%3Fllon%20%3C%3D%20"+west+")%0Afilter(%3Frlon%20%3E%3D%20"+east+")%0Afilter(%3Fllat%20%3C%3D%20"+south+")%0Afilter(%3Fulat%20%3E%3D%20"+north+")%0A%0A%0A%3Fdataset%20elseweb-data%3AcoversTimePeriod%20%3Fperiod.%0A%3Fperiod%20elseweb-data%3AhasStartDate%20%3FstartDate.%0A%3Fperiod%20elseweb-data%3AhasEndDate%20%3FendDate.%0A%0A%3FstartDate%20elseweb-data%3AhasDateTime%20%3FsDate.%0A%3FendDate%20elseweb-data%3AhasDateTime%20%3FeDate.%0A%0Afilter(%3FsDate%20%3E%3D%20%22"+start+"%22%5E%5Exsd%3Adate)%0Afilter(%3FeDate%20%3C%3D%20%22"+end+"%22%5E%5Exsd%3Adate)%20%0A%0A%3Fdataset%20elseweb-data%3AhasDataBand%20%3Fband.%0A%3Fdataset%20elseweb-data%3AhasManifestation%20%3Fmanifest.%0A%3Fmanifest%20elseweb-edac%3AhasJSONCapabilitiesDigestURL%20%3Fmetadata.%0A%0A%3Fband%20elseweb-data%3ArepresentsEntity%20%3C"+entity+"%3E.%0A%3Fband%20elseweb-data%3AencodingOfCharacteristic%20%3C"+characteristic+"%3E.%0A%3Fband%20provo%3AwasGeneratedBy%20%3Factivity.%0A%3Factivity%20provo%3AwasAssociatedWith%20%3C"+source+"%3E%0A%0A%7D%20limit%205&format=application%2Fjson";   
+            var  datasetQuery = "define%20input%3Ainference%20%22http%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Fmappings%2Felseweb-mappings.owl%22%0Aprefix%20elseweb-data%3A%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-data.owl%23%3E%0Aprefix%20elseweb-edac%3A%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-edac.owl%23%3E%0Aprefix%20provo%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Fprov%23%3E%0A%0Aselect%20distinct%20%3Fdataset%20%3Fmetadata%0Afrom%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Flinked-data%2Fedac%2Fservices%2Fwcs-services.owl%3E%0Awhere%0A%7B%0A%3Fdataset%20elseweb-data%3AcoversRegion%20%3Fregion.%0A%3Fregion%20elseweb-data%3AhasLeftLongitude%20%3Fllon.%0A%3Fregion%20elseweb-data%3AhasRightLongitude%20%3Frlon.%0A%3Fregion%20elseweb-data%3AhasLowerLatitude%20%3Fllat.%0A%3Fregion%20elseweb-data%3AhasUpperLatitude%20%3Fulat.%0A%0Afilter(%3Fllon%20%3C%3D%20"+west+")%0Afilter(%3Frlon%20%3E%3D%20"+east+")%0Afilter(%3Fllat%20%3C%3D%20"+south+")%0Afilter(%3Fulat%20%3E%3D%20"+north+")%0A%0A%0A%3Fdataset%20elseweb-data%3AcoversTimePeriod%20%3Fperiod.%0A%3Fperiod%20elseweb-data%3AhasStartDate%20%3FstartDate.%0A%3Fperiod%20elseweb-data%3AhasEndDate%20%3FendDate.%0A%0A%3FstartDate%20elseweb-data%3AhasDateTime%20%3FsDate.%0A%3FendDate%20elseweb-data%3AhasDateTime%20%3FeDate.%0A%0Afilter(%3FsDate%20%3E%3D%20%22"+start+"%22%5E%5Exsd%3Adate)%0Afilter(%3FeDate%20%3C%3D%20%22"+end+"%22%5E%5Exsd%3Adate)%20%0A%0A%3Fdataset%20elseweb-data%3AhasDataBand%20%3Fband.%0A%3Fdataset%20elseweb-data%3AhasManifestation%20%3Fmanifest.%0A%3Fmanifest%20elseweb-edac%3AhasJSONCapabilitiesDigestURL%20%3Fmetadata.%0A%0A%3Fband%20elseweb-data%3ArepresentsEntity%20%3C"+entity+"%3E.%0A%3Fband%20elseweb-data%3AencodingOfCharacteristic%20%3C"+characteristic+"%3E.%0A%3Fband%20provo%3AwasGeneratedBy%20%3Factivity.%0A%3Factivity%20provo%3AwasAssociatedWith%20%3C"+source+"%3E%0A%0A%7D%20limit%2010&format=application%2Fjson";   
             //alert(datasetQuery);
             return(datasetQuery);
         };

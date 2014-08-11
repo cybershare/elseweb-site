@@ -7,6 +7,7 @@
     <script src="<?php echo base_url(JS."lodash.underscore.min.js");?>"></script>
     <script src="<?php echo base_url(JS."experiment-gui.js");?>"></script>
     <script src="<?php echo base_url(JS."endpoint.js");?>"></script>
+    <script src="<?php echo base_url(JS."google-region.js");?>"></script> 
 
    <!--container start-->
    <div id="endpoint_container" class="container" ng-app="elsewebGUI">
@@ -151,7 +152,7 @@
                      </div>
                 </div>  
                
-               <div class="tab-panel" ng-show="false">
+               <div class="tab-panel" ng-show="panel.isSelected(5)">
                     <div class="row experiment-row">
                         <div class="col-md-12 gray-bg">
                             <h4>Experiment Specification</h4>
