@@ -7,7 +7,6 @@
     <script src="<?php echo base_url(JS."lodash.underscore.min.js");?>"></script>
     <script src="<?php echo base_url(JS."experiment-gui.js");?>"></script>
     <script src="<?php echo base_url(JS."endpoint.js");?>"></script>
-    <script src="<?php echo base_url(JS."google-region.js");?>"></script> 
 
    <!--container start-->
    <div id="endpoint_container" class="container" ng-app="elsewebGUI">
@@ -27,11 +26,12 @@
                      <div class="row">
                           <div class="col-md-12 gray-bg" style="padding-bottom: 15px; border-radius: 3px;">
                               <h4>Region</h4>
-                              <p>Enter coordinates or drag point in map to set bounding box for the experiment.
+                              <p>Drag point in map to set bounding box for the experiment.
                                  Coordinates will update on mouse out event on rectangle layer.</p>
                               <input ng-model="experiment.coordinates" disabled="true" id="boundsText" class="form-control" placeholder= "e.g. 50, -65.123, 23, -126 (N, E, S, W)" type="text"/>
-                              <div class="no-data alert alert-danger">No data available. Please Change coordinates</div>
+                              <div class="no-data alert alert-danger">No data available. Please change bounding box coordinates</div>
                               <div class="data-available alert alert-success">Data Available</div>
+                              <div class="loading-data alert alert-warning">Looking for data...</div>
                           </div>
                       </div>
 
@@ -215,7 +215,9 @@
            
            <div class="col-md-4 gray-bg col-md-push-1">
                <h4>Experiment Summary</h4>
-               <p><b>Region Bounds: </b><span ng-bind="experiment.coordinates"></span> </p>
+               <p>
+                   <b>Region Bounds (N, E, S, W): </b> <br> <span ng-bind="experiment.coordinates"></span> 
+               </p>
                <p><b>Species: </b><span ng-bind="experiment.species"></span></p>
                <p><b>Datasets: </b><span></span></p>
                <div class="eq-len">

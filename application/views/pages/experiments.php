@@ -5,7 +5,7 @@
         <div class="hiring">
             <div class="col-lg-6 col-sm-6">
                 <div class="content">
-                    <img width="500" src="<?php echo base_url(IMAGES."elseweb-gui.png");?>" alt="text img">    
+                    <img width="500" class="img-responsive" src="<?php echo base_url(IMAGES."elseweb-gui.png");?>" alt="text img">    
                 </div>
             </div>
             <div class="col-lg-6 col-sm-6">

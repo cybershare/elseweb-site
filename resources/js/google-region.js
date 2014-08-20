@@ -14,7 +14,7 @@
   
     app.controller('RegionController', ['$http' , '$scope', function($http, $scope){
         var rectangle;
-        var bounds = new google.maps.LatLngBounds(new google.maps.LatLng(0, 0), new google.maps.LatLng(0, 0)); 
+        var bounds = new google.maps.LatLngBounds(new google.maps.LatLng(32.24997445586331, -120.234375), new google.maps.LatLng(49.38237278700947, -78.75)); 
         var url_visko = "http://visko.cybershare.utep.edu/sparql?default-graph-uri=&query=";
         var callback_visko = "&callback=JSON_CALLBACK";
         var north, east, south, west;
@@ -24,6 +24,7 @@
          //Hide data notification messages
          $( ".no-data" ).hide();
          $( ".data-available" ).hide();  
+         $( ".loading-data" ).hide();  
             
          //Render Google Maps Tool   
          $scope.initialize = function (){
@@ -56,11 +57,15 @@
         
 	//Update the rectangle
         $scope.showNewRect = function(event) {
+                $( ".no-data" ).slideUp( "slow", function() {});
+                $( ".data-available" ).slideUp( "slow", function() {});
+                $( ".loading-data" ).slideDown( "slow", function() {});
 		ne = rectangle.getBounds().getNorthEast();
 		sw = rectangle.getBounds().getSouthWest();
 		nw = new google.maps.LatLng(ne.lat(), sw.lng());
 		se = new google.maps.LatLng(sw.lat(), ne.lng());
 		north = ne.lat();
+                $scope.nth = ne.lat();
 		east = ne.lng();
 		south = sw.lat();
 		west = sw.lng();
@@ -81,18 +86,14 @@
 		
 		//Request to check if there is any data in the selected region using the entity query URL and display message box.
                $http.jsonp(url_visko+entURL+callback_visko).success(function(data){
+                    $( ".loading-data" ).slideUp( "slow", function() {});
                     if(data.results.bindings == ""){
-			$( ".data-available" ).slideUp( "slow", function() {
-                            //$scope.speciesDisabled = true;
-                        });
-			$( ".no-data" ).slideDown( "slow", function() {
-                            
-                        });
+                        $( ".data-available" ).slideUp( "slow", function() {});
+			$( ".no-data" ).slideDown( "slow", function() {});
+                        
 	             }
 		     else{
-                        $( ".no-data" ).slideUp( "slow", function() {
-                            //$scope.speciesDisabled = false;
-                        });
+                        $( ".no-data" ).slideUp( "slow", function() {});
                         $( ".data-available" ).slideDown( "slow", function() {});
 		     }                  
                 });

@@ -16,7 +16,7 @@
      
     <div class="row">
         <div class="col-md-8  col-md-offset-2 col-sm-6 col-xs-8 text-center info-paragraph-b">
-            Register an account for experiment submission access or login above.
+            <b>Register an account for experiment submission access or login above.</b>
         </div>
    </div>     
      

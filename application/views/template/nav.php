@@ -21,7 +21,7 @@
                         <li class="dropdown <?php echo isActive($pageName,"login/new_user")?>" id="menuLogin">
                           <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login <b class="caret"></b></a>
                           <div class="dropdown-menu pull-right" style="padding:10px;">
-                            <form  role="form" method="post" id="loginForm" name="loginForm" action="">
+                            <form  role="form" method="post" id="loginForm" name="loginForm" onsubmit="userLogin('<?php echo site_url('login')?>'); return false">
                              <fieldset>
                              <div class="form-group">
                                 <input type="text" placeholder="Username" style="margin-top: 4px" id="username" name="username"/>
@@ -30,10 +30,10 @@
                                  <input type="password" placeholder="Password"  style="margin-top: 4px" id="password" name="password"/><br/>
                              </div>
                              </fieldset>
+                             <hr/>
+                             <input type="submit" value="Login"  class="btn-small btn-default pull-right"/>                    
                             </form>
-                              <hr/>
-                              <!-- <input type="button" value="Forgot Username or Password?"  class="btn-small btn-default"/> -->
-                              <input type="button" value="Login"  class="btn-small btn-default pull-right" onclick="userLogin('<?php echo site_url('login')?>')"/>
+                              
                               <a href="<?php echo site_url('register')?>">
                                   <input type="button" style="margin-right: 10px;" value="Register"  class="btn-small btn-default pull-right"/>
                               </a>

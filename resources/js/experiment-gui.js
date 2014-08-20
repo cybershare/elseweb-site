@@ -26,6 +26,7 @@
         $scope.experiment = {coordinates: "", species: "", algorithm: ""}; //experiment data capture
         $scope.datasets = [];
         $rootScope.filteredparams = []; //experiment algorithm parameters   
+        $scope.nth = "";
         
         //Tab handlers    
         this.selectTab = function(setTab){
@@ -131,6 +132,17 @@
                 $scope.datasetOptions = data.results.bindings;            
             });    
         }; 
+                 
+        $scope.setBounds = function (){
+            userBounds = $scope.experiment.coordinates;
+	    boundsArray = userBounds.split(",");
+	    $scope.nth  = boundsArray[0];
+	    east   = boundsArray[1];
+	    south  = boundsArray[2];
+	    west   = boundsArray[3];   
+            alert (west);
+        };         
+                 
                  
         $scope.datasetQuery = function () {
             userBounds = $scope.experiment.coordinates;

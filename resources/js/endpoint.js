@@ -55,7 +55,7 @@ function runExperiment(experiment_json, base_url){
         'url' : 'http://visko.cybershare.utep.edu/elseweb-endpoint/JSONSpecification',
         'type' : 'POST', //the way you want to send data to your URL
         'data' : 'jsonSpec=' + experiment_json, 
-        timeout : 300000,
+        //timeout : 300000,
         'success' : function(result){ 
             if(result){             
                     //Merge experiment and result json
@@ -73,7 +73,7 @@ function runExperiment(experiment_json, base_url){
         'error' : function(jqXHR, textStatus, errorThrown){
                     $.noty.closeAll();
                     $.unblockUI();
-                    topNoty('error', 'Oops! Something went wrong... try again later');
+                    topNoty('error', 'Oops! Something went wrong... try again later'+ textStatus);
                      if(textStatus==="timeout") {  
                         topNoty('error', 'Call has timed out'); //Handle the timeout
                     }            
