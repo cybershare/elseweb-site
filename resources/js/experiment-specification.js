@@ -49,8 +49,13 @@
                 $http.jsonp(url_visk+datasetQuery+callback_visk).success(function(data){
                     $scope.datasetURI = [];
                     $scope.datasetURI  = data.results.bindings;
-                    $rootScope.datasetURI_Test = data.results.bindings;
-                    $scope.assembleExperiment();   //call to assemble the experiment
+                    if ($scope.datasetURI == ""){
+                        topNoty('error', 'No datasets available, try other parameters!');
+                    }
+                    else{
+                        $rootScope.datasetURI_Test = data.results.bindings;
+                        $scope.assembleExperiment();   //call to assemble the experiment
+                    }
                  }).error(function(){
                     $.unblockUI();
                     $.noty.closeAll(); 
@@ -96,13 +101,7 @@
                     parameters.datatype = $rootScope.filteredparams.items[index].datatype.value.slice(33);
                $scope.eSpecification.specification.algorithm.parameterBindings.push(parameters);
            }
-           for (index in $scope.datasetURI){
-               var datasets = {};
-               datasets.datasetURI = $scope.datasetURI[index].dataset.value;
-               $scope.eSpecification.specification.modelingScenario.push(datasets);
-           }
-
-           
+ 
            //alert(JSON.stringify($scope.eSpecification));
            $("textarea#experiment").val(JSON.stringify($scope.eSpecification));
            $.unblockUI();
@@ -110,6 +109,12 @@
        }; 
        
        this.submitExperiment = function (base_url){
+           for (index in $rootScope.selectedDatasets){
+               var datasets = {};
+               datasets.datasetURI = $scope.selectedDatasets[index];
+               $scope.eSpecification.specification.modelingScenario.push(datasets);
+           }
+           $("textarea#experiment").val(JSON.stringify($scope.eSpecification));
            genGUID(base_url);
        };
             

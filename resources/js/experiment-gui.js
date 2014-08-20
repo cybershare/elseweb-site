@@ -26,7 +26,6 @@
         $scope.experiment = {coordinates: "", species: "", algorithm: ""}; //experiment data capture
         $scope.datasets = [];
         $rootScope.filteredparams = []; //experiment algorithm parameters   
-        $scope.nth = "";
         
         //Tab handlers    
         this.selectTab = function(setTab){
@@ -171,6 +170,25 @@
         };   
                   
     }]);
+
+   app.controller('SelectDataController', ['$rootScope',  function($rootScope){
+       $rootScope.selectedDatasets = [];
+       //toggle selection for a given dataset
+       this.toggleSelection = function (datasetURI){
+           var idx = $rootScope.selectedDatasets.indexOf(datasetURI);
+           
+           //is currently selected
+           if(idx > -1){
+               $rootScope.selectedDatasets.splice(idx, 1);
+           }
+           //is newly selected
+           else{
+               $rootScope.selectedDatasets.push(datasetURI);
+           }
+           
+       };
+           
+   }]);
     
 })();
 

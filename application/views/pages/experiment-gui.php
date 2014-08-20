@@ -152,7 +152,7 @@
                      </div>
                 </div>  
                
-               <div class="tab-panel" ng-show="panel.isSelected(5)">
+               <div class="tab-panel" ng-hide="true">
                     <div class="row experiment-row">
                         <div class="col-md-12 gray-bg">
                             <h4>Experiment Specification</h4>
@@ -165,18 +165,23 @@
                
                
                <div class="tab-panel" ng-show="panel.isSelected(5)">
-                    <div class="row experiment-row">
+                   <div class="row experiment-row" ng-controller="SelectDataController as selectDataCtrl">
                         <div class="col-md-12 gray-bg">
                             <h4>Retrived Datasets</h4>
+                            <p>Select up to X datasets for experiment submission.</p>
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th>DatasetURI</th>
+                                            <th>JSON Metadata</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat = "row in datasetURI_Test">
-                                            <td>{{row.dataset.value}}</td>
+                                            <td><input id="{{row.dataset.value}}" type="checkbox" value="{{row.dataset.value}}" ng-checked="selectedDatasets.indexOf(row.dataset.value) > -1" ng-click="selectDataCtrl.toggleSelection(row.dataset.value)" /></td>
+                                            <td><a target="_blank" href="{{row.dataset.value}}">{{row.dataset.value}}</a></td>
+                                            <td><a target="_blank" href="{{row.metadata.value}}">See Metadata</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -204,7 +209,7 @@
                                 <li ng-class="{ active: panel.isSelected(5), inactive: experiment.algorithm == '' }">
                                     <a href ng-click="panel.selectTab(5); SubmissionCtrl.processAssemble()">Review</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(6), inactive: datasetURI == null }">
+                                <li ng-class="{ active: panel.isSelected(6), inactive: selectedDatasets == '' }">
                                     <a href ng-click="panel.selectTab(6); SubmissionCtrl.submitExperiment('storeExperiment')">Submit</a>
                                 </li>
                             </ul>
@@ -219,7 +224,7 @@
                    <b>Region Bounds (N, E, S, W): </b> <br> <span ng-bind="experiment.coordinates"></span> 
                </p>
                <p><b>Species: </b><span ng-bind="experiment.species"></span></p>
-               <p><b>Datasets: </b><span></span></p>
+               <p><b>Dataset Filters: </b><span></span></p>
                <div class="eq-len">
                     <table id="datasetParams" class="table table-striped">
                             <thead>
@@ -236,6 +241,19 @@
                                     <td>{{row.entity.slice(59)}}</td>
                                     <td>{{row.characteristic.slice(59)}}</td>
                                     <td>{{row.source.slice(59)}}</td>
+                                </tr>
+                            </tbody>    
+                    </table>
+               </div>
+               <p><b>Selected Datasets:</b></p>
+               <div class="eq-len">
+                    <table class="table table-striped">
+                            <thead>
+                                <th>DatasetURIs</th>   
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat = "row in selectedDatasets">
+                                    <td>{{row}}</td>       
                                 </tr>
                             </tbody>    
                     </table>
