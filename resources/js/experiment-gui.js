@@ -26,6 +26,7 @@
         $scope.experiment = {coordinates: "", species: "", algorithm: ""}; //experiment data capture
         $scope.datasets = [];
         $rootScope.filteredparams = []; //experiment algorithm parameters   
+        $rootScope.data = false;
         
         //Tab handlers    
         this.selectTab = function(setTab){

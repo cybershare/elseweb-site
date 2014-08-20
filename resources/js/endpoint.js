@@ -57,7 +57,12 @@ function runExperiment(experiment_json, base_url){
         'data' : 'jsonSpec=' + experiment_json, 
         //timeout : 300000,
         'success' : function(result){ 
-            if(result){             
+            if(result.executedSpecification.experimentResult.resultURL == null){
+                $.noty.closeAll();
+                $.unblockUI();
+                topNoty('error', 'Oops! No results received from Lifemapper');               
+            }
+            else{             
                     //Merge experiment and result json
                     experiment_json = $.parseJSON(experiment_json);
                     var merged_json = $.extend({}, experiment_json, result);
@@ -67,8 +72,6 @@ function runExperiment(experiment_json, base_url){
                     //alert(merged_json);
                     storeExperiment(merged_json, base_url);
             }
-            else
-                topNoty('error', 'An error has ocurred.');
         },
         'error' : function(jqXHR, textStatus, errorThrown){
                     $.noty.closeAll();

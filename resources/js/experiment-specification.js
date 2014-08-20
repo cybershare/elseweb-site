@@ -51,6 +51,8 @@
                     $scope.datasetURI  = data.results.bindings;
                     if ($scope.datasetURI == ""){
                         topNoty('error', 'No datasets available, try other parameters!');
+                        $.unblockUI();
+                        $.noty.closeAll(); 
                     }
                     else{
                         $rootScope.datasetURI_Test = data.results.bindings;

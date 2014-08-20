@@ -197,17 +197,18 @@
                                 <li ng-class="{ active: panel.isSelected(1) }">
                                     <a href ng-click="panel.selectTab(1)">Region</a>
                                 </li>
-                                <li id="test" ng-class="{ active: panel.isSelected(2), inactive: experiment.coordinates == '' }">
+                                <li id="test" ng-class="{ active: panel.isSelected(2), inactive: experiment.coordinates == '' || data == false }">
                                     <a href ng-disabled="true" ng-click="panel.selectTab(2)">Species</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(3), inactive: experiment.coordinates == '' }">
+                                <li ng-class="{ active: panel.isSelected(3), inactive: experiment.coordinates == '' || experiment.species == '' }">
                                     <a href ng-click="panel.selectTab(3)">Datasets</a>
                                 </li>
-                                <li ng-class="{ active: panel.isSelected(4), inactive: datasets == '' }">
+                                <li ng-class="{ active: panel.isSelected(4), inactive: datasets[0].source == null || datasets[0].source == '--select...' 
+                                                || datasets[0].start == '--select...' || datasets[0].end == '--select...' }">
                                     <a href ng-click="panel.selectTab(4)">Algorithm</a>
                                 </li>
                                 <li ng-class="{ active: panel.isSelected(5), inactive: experiment.algorithm == '' }">
-                                    <a href ng-click="panel.selectTab(5); SubmissionCtrl.processAssemble()">Review</a>
+                                    <a href ng-click="panel.selectTab(5); SubmissionCtrl.processAssemble()">Selection</a>
                                 </li>
                                 <li ng-class="{ active: panel.isSelected(6), inactive: selectedDatasets == '' }">
                                     <a href ng-click="panel.selectTab(6); SubmissionCtrl.submitExperiment('storeExperiment')">Submit</a>

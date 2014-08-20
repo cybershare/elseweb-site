@@ -12,7 +12,7 @@
     /* Module inherited to elsewebGUI module */
     var app = angular.module ('region-ui', []);
   
-    app.controller('RegionController', ['$http' , '$scope', function($http, $scope){
+    app.controller('RegionController', ['$http' , '$scope', '$rootScope', function($http, $scope, $rootScope){
         var rectangle;
         var bounds = new google.maps.LatLngBounds(new google.maps.LatLng(32.24997445586331, -120.234375), new google.maps.LatLng(49.38237278700947, -78.75)); 
         var url_visko = "http://visko.cybershare.utep.edu/sparql?default-graph-uri=&query=";
@@ -88,11 +88,12 @@
                $http.jsonp(url_visko+entURL+callback_visko).success(function(data){
                     $( ".loading-data" ).slideUp( "slow", function() {});
                     if(data.results.bindings == ""){
+                        $rootScope.data = false;
                         $( ".data-available" ).slideUp( "slow", function() {});
 			$( ".no-data" ).slideDown( "slow", function() {});
-                        
 	             }
 		     else{
+                        $rootScope.data = true; 
                         $( ".no-data" ).slideUp( "slow", function() {});
                         $( ".data-available" ).slideDown( "slow", function() {});
 		     }                  
