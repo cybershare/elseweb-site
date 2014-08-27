@@ -60,7 +60,7 @@ function runExperiment(experiment_json, base_url){
             if(result.executedSpecification.experimentResult.resultURL == null){
                 $.noty.closeAll();
                 $.unblockUI();
-                topNoty('error', 'Oops! No results received from Lifemapper');               
+                topNoty('error', 'Oops! No result URLs have been generated.');               
             }
             else{             
                     //Merge experiment and result json

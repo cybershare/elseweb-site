@@ -6,7 +6,7 @@
     <script src="<?php echo base_url(JS."ui-bootstrap-0.11.0.min.js");?>"></script>
     <script src="<?php echo base_url(JS."lodash.underscore.min.js");?>"></script>
     <script src="<?php echo base_url(JS."experiment-gui.js");?>"></script>
-    <script src="<?php echo base_url(JS."endpoint.js");?>"></script>
+    <!-- <script src="<?php echo base_url(JS."endpoint.js");?>"></script> -->
 
    <!--container start-->
    <div id="endpoint_container" class="container" ng-app="elsewebGUI">

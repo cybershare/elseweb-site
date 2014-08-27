@@ -117,9 +117,123 @@
                $scope.eSpecification.specification.modelingScenario.push(datasets);
            }
            $("textarea#experiment").val(JSON.stringify($scope.eSpecification));
-           genGUID(base_url);
+           //genGUID(base_url);
+           this.genGUID(base_url); 
        };
             
+        
+       this.genGUID = function (base_url) {
+            middleNoty('information', 'Submitting experiment...');
+            $.blockUI({ message: null });   
+            $http({method: 'GET', url: base_url + '/' + 'guid'}).
+                success(function(data, status) {
+                    if(data){
+                            $scope.appendGUID(data, base_url);
+                    }
+                }).
+                error(function(data, status) {
+                    $.noty.closeAll();
+                    $.unblockUI();
+                    topNoty('error', 'Oops! GUID generation failed.' + status);   
+                });
+        };    
+        
+        $scope.appendGUID = function (guid, base_url){
+            var experiment_json = $('#experiment').val();  
+            experiment_json = $.parseJSON(experiment_json); //string to manipulable json
+            experiment_json["specification"]["id"] = guid; //append generated experiment id
+            experiment_json = JSON.stringify(experiment_json);  //json to string    
+            $scope.runExperiment(experiment_json, base_url);        
+        };
+        
+        $scope.runExperiment = function(experiment_json, base_url){
+            $http({
+                method : "post",
+                url: "http://visko.cybershare.utep.edu/elseweb-endpoint/JSONSpecification", 
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $.param({jsonSpec: experiment_json})
+                
+            }).        
+                success(function(data){
+                    if(data.executedSpecification.experimentResult.resultURL == null){
+                        $.noty.closeAll();
+                        $.unblockUI();
+                        topNoty('error', 'Oops! No result URLs have been generated.');               
+                    }
+                    else{
+                        experiment_json = $.parseJSON(experiment_json);
+                        var merged_json = $.extend({}, experiment_json, data);
+                        merged_json = JSON.stringify(merged_json);
+                        $.unblockUI();
+                        $.noty.closeAll();  
+                        //alert(merged_json);
+                        $scope.storeExperiment(merged_json, base_url);
+                    }
+                }).
+                error(function(data, status){
+                    $.noty.closeAll();
+                    $.unblockUI();
+                    topNoty('error', 'Oops! Something went wrong... try again later. '+ status); 
+                });
+        };
+        
+        $scope.storeExperiment = function (experiment_json, base_url){
+           var html = ""; //Will store raw html with experiment results
+           $http({
+               method: "post",
+               url: base_url + '/' + 'store',
+               headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+               data: $.param({experiment: experiment_json})
+           }).
+               success(function(data){
+                   if(data){
+                       if (data === 'success'){
+                            experiment_json = $.parseJSON(experiment_json);
+                            topNoty('success', 'Experiment submitted successfully!');
+                            $('#endpoint_container').fadeOut('slow');
+                            $('#endpoint_container').empty();
+                            html += "<div class='row'>";
+                            html += "<div class='text-center feature-head'>";
+                            html +=  "<h3>ELSEWeb Experiment Specification Results</h3>";
+                            html += "</div>";
+                            html += "</div>";
+                            html += "<div class='property gray-bg'>";
+                            html += "<div class='row'>";
+                            html += "<div class='col-md-8 col-md-offset-2'>";
+                            html += "<p>Experiment ID: "+experiment_json['specification']['id']+" </p>";
+                            html += "<p>Success: "+experiment_json['executedSpecification']['successful']+" </p>";
+                            html += "<p>Result URL: <a href='"+experiment_json['executedSpecification']['experimentResult']['resultURL']+"' target='_blank'>"+experiment_json['executedSpecification']['experimentResult']['resultURL']+"</a></p>";
+                            html += "<p>Result URI: <a href='"+experiment_json['executedSpecification']['experimentResult']['resultURI']+"' target='_blank'>"+experiment_json['executedSpecification']['experimentResult']['resultURI']+"</a></p>";
+                            html += "</div>";
+                            html += "</div>"; 
+                            html += "</div>"; 
+                            html += "<div class='row'>";
+                            html += "<div class='text-center col-md-4 col-md-offset-2'>";
+                            html += "<a href='experiments'><button type='button' class='btn btn-purchase'>New Experiment</button></a>";
+                            html += "</div>";
+                            html += "<div class='text-center col-md-4'>";
+                            html += "<a href='history'><button type='button' class='btn btn-default'>Experiment History</button></a>";
+                            html += "</div>";
+                            html += "</div>";
+                            html += "</div>";
+                            $('#endpoint_container').html( html );
+                            $('html, body').animate({ scrollTop: $('#endpoint_container').offset().top }, 500);
+                            $('#endpoint_container').fadeIn('slow');
+                       }
+                    else
+                        topNoty('error', 'Oops! something went wrong... try again later');
+                }
+                else
+                    topNoty('error', 'An error has ocurred.');            
+               }).
+               error(function(data, status){
+                    $.noty.closeAll();
+                    $.unblockUI();
+                    topNoty('error', 'Oops! Error storing on database. '+ status);                    
+               });
+           
+        };
+   
     }]);
 
 })(); //app end
