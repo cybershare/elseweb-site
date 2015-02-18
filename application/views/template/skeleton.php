@@ -34,6 +34,9 @@
     <link rel="stylesheet" href="<?php echo base_url(CSS."style.css");?>">
     <link rel="stylesheet" href="<?php echo base_url(CSS."style-responsive.css");?>">
     
+    <!-- Select theme style -->
+    <link rel="stylesheet" href="<?php echo base_url(CSS."select.css");?>">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>

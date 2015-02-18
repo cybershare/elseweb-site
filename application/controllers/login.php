@@ -112,7 +112,7 @@ class Login extends CI_Controller
             $this->session->sess_destroy();
             $url = site_url();
             header('Location: '.$url);
-     }
+    }
         
 }
 

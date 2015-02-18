@@ -13,7 +13,7 @@
      * region-ui: google map creation and handlers
      * spec-factory: Experiment specification assembly factory
      */
-    var app = angular.module('elsewebGUI', ['ui.utils', 'ui.bootstrap', 'region-ui', 'spec-factory']);
+    var app = angular.module('elsewebGUI', ['ui.utils', 'ui.bootstrap', 'region-ui', 'spec-factory', 'ui.select', 'ngSanitize']);
         
     /* Global variables */
     var url = "http://visko.cybershare.utep.edu/sparql?default-graph-uri=&query=";    
@@ -38,11 +38,44 @@
         };
             
     }]);
+
+    app.filter('propsFilter', function() {
+      return function(items, props) {
+        var out = [];
+
+        if (angular.isArray(items)) {
+          items.forEach(function(item) {
+            var itemMatches = false;
+
+            var keys = Object.keys(props);
+            for (var i = 0; i < keys.length; i++) {
+              var prop = keys[i];
+              var text = props[prop].toLowerCase();
+              if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
+                itemMatches = true;
+                break;
+              }
+            }
+
+            if (itemMatches) {
+              out.push(item);
+            }
+          });
+        } else {
+          // Let the output be the input untouched
+          out = items;
+        }
+
+        return out;
+      }
+    });
         
     app.controller('SpeciesController', ['$http' , '$scope', function($http, $scope){
         //Species encoded SPARQL query
-        var species = "prefix+lifemapper%3A+%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-lifemapper.owl%23%3E%0D%0Aprefix+data%3A+%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-data.owl%23%3E%0D%0A%0D%0Aselect+%3Fname%0D%0Afrom+%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Flinked-data%2Flifemapper%2Foccurrences%2Fspecies-occurrences.owl%3E%0D%0Awhere%7B%0D%0A%3Fdataset+a+lifemapper%3ASpeciesOccurrenceDataset.%0D%0A%3Fdataset+data%3AhasLayer+%3Flayer.%0D%0A%3Fdataset+data%3AhasManifestation+%3Fmanif.%0D%0A%3Fmanif+data%3AhasFileDownloadURL+%3FfileURL.%0D%0A%3Fmanif+data%3AhasLandingPageURL+%3FmetadataURL.%0D%0A%3Flayer+data%3AcontainsFeatureSet+%3Fset.%0D%0A%3Fset+a+lifemapper%3ASpeciesOccurrenceSet.%0D%0A%3Fset+lifemapper%3AhasOccurrenceSetID+%3Fid.%0D%0A%3Fset+lifemapper%3AhasOccurrenceOfSpecies+%3Fspecies.%0D%0A%3Fspecies+lifemapper%3AhasGenusName+%3Fname.%0D%0A%7D%0D%0A&format=application%2Fjson";
-        
+        //var species = "prefix+lifemapper%3A+%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-lifemapper.owl%23%3E%0D%0Aprefix+data%3A+%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-data.owl%23%3E%0D%0A%0D%0Aselect+%3Fname%0D%0Afrom+%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Flinked-data%2Flifemapper%2Foccurrences-v2%2Fspecies-occurrences-v2.owl%3E%0D%0Awhere%7B%0D%0A%3Fdataset+a+lifemapper%3ASpeciesOccurrenceDataset.%0D%0A%3Fdataset+data%3AhasLayer+%3Flayer.%0D%0A%3Fdataset+data%3AhasManifestation+%3Fmanif.%0D%0A%3Fmanif+data%3AhasFileDownloadURL+%3FfileURL.%0D%0A%3Fmanif+data%3AhasLandingPageURL+%3FmetadataURL.%0D%0A%3Flayer+data%3AcontainsFeatureSet+%3Fset.%0D%0A%3Fset+a+lifemapper%3ASpeciesOccurrenceSet.%0D%0A%3Fset+lifemapper%3AhasOccurrenceSetID+%3Fid.%0D%0A%3Fset+lifemapper%3AhasOccurrenceOfSpecies+%3Fspecies.%0D%0A%3Fspecies+lifemapper%3AhasGenusName+%3Fname.%0D%0A%7D%0D%0A&format=application%2Fjson";     
+        var species = "prefix%20lifemapper%3A%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-lifemapper.owl%23%3E%0Aprefix%20data%3A%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Felseweb-data.owl%23%3E%0A%0Aselect%20%3Fname%20%3Fid%0Afrom%20%3Chttp%3A%2F%2Fontology.cybershare.utep.edu%2FELSEWeb%2Flinked-data%2Flifemapper%2Foccurrences-v2%2Fspecies-occurrences-v2.owl%3E%0Awhere%7B%0A%3Fdataset%20a%20lifemapper%3ASpeciesOccurrenceDataset.%0A%3Fdataset%20data%3AhasLayer%20%3Flayer.%0A%3Fdataset%20data%3AhasManifestation%20%3Fmanif.%0A%3Fmanif%20data%3AhasFileDownloadURL%20%3FfileURL.%0A%3Fmanif%20data%3AhasLandingPageURL%20%3FmetadataURL.%0A%3Flayer%20data%3AcontainsFeatureSet%20%3Fset.%0A%3Fset%20a%20lifemapper%3ASpeciesOccurrenceSet.%0A%3Fset%20lifemapper%3AhasOccurrenceSetID%20%3Fid.%0A%3Fset%20lifemapper%3AhasOccurrenceOfSpecies%20%3Fspecies.%0A%3Fspecies%20lifemapper%3AhasGenusName%20%3Fname.%0A%7D%0D%0A&format=application%2Fjson";
+            
+        $scope.specimen = {};
         //Perform query for species dropdown list    
         $http.jsonp(url+species+callback).success(function(data){
             $scope.species = [];

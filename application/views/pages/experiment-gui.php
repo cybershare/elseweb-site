@@ -1,12 +1,15 @@
     <!-- Page javascript files -->
     <script src="<?php echo base_url(JS."JSLINQ.js");?>"></script>
     <script src="<?php echo base_url(JS."angular.min.js");?>"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
     <script src="<?php echo base_url(JS."ui-utils.min.js");?>"></script>
+    <script src="<?php echo base_url(JS."select.js");?>"></script>
     <script src="<?php echo base_url(JS."experiment-specification.js");?>"></script>
     <script src="<?php echo base_url(JS."ui-bootstrap-0.11.0.min.js");?>"></script>
     <script src="<?php echo base_url(JS."lodash.underscore.min.js");?>"></script>
     <script src="<?php echo base_url(JS."experiment-gui.js");?>"></script>
     <!-- <script src="<?php echo base_url(JS."endpoint.js");?>"></script> -->
+
 
    <!--container start-->
    <div id="endpoint_container" class="container" ng-app="elsewebGUI">
@@ -53,9 +56,15 @@
                              <p>Select species</p>
                              <form ng-controller="SpeciesController as speciesCtrl">
                                  <div class="form-group">
-                                     <select ng-options="s.name.value as s.name.value for s in species" ng-model="experiment.species" class="form-control blck-input">
-                                         <option style="display:none" value="">select...</option> 
-                                     </select>
+                                    <select ng-options="s.id.value as s.name.value for s in species" ng-model="experiment.species" class="form-control blck-input">
+                                           <option style="display:none" value="">select...</option> 
+                                     </select>                                   
+                                    <!-- <ui-select ng-model="experiment.species" theme="selectize">
+                                        <ui-select-match placeholder="Select or search a species in the list...">{{$select.species.name.value}}</ui-select-match>
+                                            <ui-select-choices repeat="s.name.value as s in species | propsFilter: {name: $select.search}">
+                                              <div ng-bind-html="s.name.value | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                      </ui-select>    -->              
                                  </div>
                              </form>                  
                           </div>   
@@ -224,7 +233,7 @@
                <p>
                    <b>Region Bounds (N, E, S, W): </b> <br> <span ng-bind="experiment.coordinates"></span> 
                </p>
-               <p><b>Species: </b><span ng-bind="experiment.species"></span></p>
+               <p><b>Species ID: </b><span ng-bind="experiment.species"></span></p>
                <p><b>Dataset Filters: </b><span></span></p>
                <div class="eq-len">
                     <table id="datasetParams" class="table table-striped">
