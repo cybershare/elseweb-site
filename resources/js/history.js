@@ -56,7 +56,7 @@ function experimentDetails(base_url, eid){
                     html += "<h4>Results</h4>";
                     html += "<p>Success: "+result['executedSpecification']['successful']+"</p>";
                     html += "<p>Result URL: <a href='"+result['executedSpecification']['experimentResult']['resultURL']+" '  target='_blank'>"+result['executedSpecification']['experimentResult']['resultURL']+"</a></p>";
-                    html += "<p>Provinence URI: <a href='"+result['executedSpecification']['experimentResult']['resultURI']+"'  target='_blank'>"+result['executedSpecification']['experimentResult']['resultURI']+"</a></p>";
+                    html += "<p>Provenance URI: <a href='"+result['executedSpecification']['experimentResult']['resultURI']+"'  target='_blank'>"+result['executedSpecification']['experimentResult']['resultURI']+"</a></p>";
                     html += "</div>";
                     html += "</div>";
                     $('#expDetails').html( html );

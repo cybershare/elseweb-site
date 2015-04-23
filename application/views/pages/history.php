@@ -19,7 +19,7 @@
                        <th>Timestamp</th>   
                        <th style='text-align:center;'>Success</th>
                        <th>Result URL</th>
-                       <th>Provinence ID</th>
+                       <th>Provenance ID</th>
                        <th style='text-align:center;'>Details</th>
                     </tr>
                 </thead>
@@ -31,7 +31,7 @@
                          echo "<td>".$row['Etimestamp']."</td>";
                          echo "<td style='text-align:center;'>".$row['Estatus']."</td>";
                          echo "<td><a href='".$row['EresultURL']."' target='_blank'>Result URL</a></td>";
-                         echo "<td><a href='".$row['EprovinenceID']."' target='_blank'>Provinence URI</a></td>";
+                         echo "<td><a href='".$row['EprovinenceID']."' target='_blank'>Provenance URI</a></td>";
                     ?>
                          <td style='text-align:center;'><button type='button' class='btn btn-purchase btn-xs' onClick='experimentDetails("history", "<?php echo $row['Eid']?>")'><span class='glyphicon glyphicon-align-justify'></span></button></td>
                     <?php

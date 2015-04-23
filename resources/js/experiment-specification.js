@@ -144,7 +144,8 @@
             var experiment_json = $('#experiment').val();  
             experiment_json = $.parseJSON(experiment_json); //string to manipulable json
             experiment_json["specification"]["id"] = guid; //append generated experiment id
-            experiment_json = JSON.stringify(experiment_json);  //json to string    
+            experiment_json = JSON.stringify(experiment_json);  //json to string  
+            //alert(experiment_json);
             $scope.runExperiment(experiment_json, base_url);        
         };
         
