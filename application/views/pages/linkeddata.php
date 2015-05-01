@@ -5,6 +5,7 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="content">
                         <h3 class="title" >SPARQL Endpoint Service</h3>
+                        <p>ELSEWeb's Linked Data is managed and stored by an instance of Virtuoso's Triple Store.</p>
                         <p>
                             Try out SPARQL queries through the Virtuoso Endpoint Service by
                             <a href="http://visko.cybershare.utep.edu/sparql" target="_blank">clicking here to access.</a>

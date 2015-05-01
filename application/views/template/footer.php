@@ -17,7 +17,7 @@
                     <h1>Acknowledgements</h1>
                     <div>
                         <em>NASA ACCESS Grants: NNX12AF49A (UTEP), NNX12AF52A (UNM) and NNX12AF45A (KU)</em><br>
-                        <em>National Science Foundation Grants:  HRD-0734825 (Cyber-ShARE) HRD-242122 (Cyber-ShARE)</em>
+                        <em>National Science Foundation Grants:  HRD-0734825 (Cyber-ShARE) HRD-1242122 (Cyber-ShARE)</em>
                     </div>
                 </div>
             </div>

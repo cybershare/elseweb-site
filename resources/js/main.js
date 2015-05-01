@@ -9,8 +9,8 @@
 
 
 function revisorLogin(base_url){   
-    var username = "reviewer";
-    var password = "reviewer1";
+    var username = "guest";
+    var password = "guest";
     $.ajax({
         'url' : base_url + '/' + 'new_user',
         'type' : 'POST', //the way you want to send data to your URL
