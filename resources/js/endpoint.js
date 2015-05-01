@@ -38,7 +38,7 @@ function appendGUID(guid, base_url){
     experiment_json["specification"]["id"] = guid; //append generated experiment id
     experiment_json = JSON.stringify(experiment_json);  //json to string
     //alert(guid);              
-    alert(experiment_json);
+    //alert(experiment_json);
     runExperiment(experiment_json, base_url);
 }
 
@@ -55,7 +55,7 @@ function runExperiment(experiment_json, base_url){
         'url' : 'http://visko.cybershare.utep.edu/elseweb-endpoint/JSONSpecification',
         'type' : 'POST', //the way you want to send data to your URL
         'data' : 'jsonSpec=' + experiment_json, 
-        //timeout : 300000,
+         timeout : 300000,
         'success' : function(result){ 
             if(result.executedSpecification.experimentResult.resultURL == null){
                 $.noty.closeAll();

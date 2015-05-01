@@ -38,20 +38,13 @@
             </div>
             <div class="col-lg-6 col-sm-6">
                 <div class="content">
-                    <pre><span class="inner-pre" style="font-size: 9px">{"specification": {
-    "occurrenceDataID": "5565338",
-        "algorithm": {
-         "id": "BIOCLIM",
-            "parameterBindings": [
-            {"name": "StandardDeviationCutOff", "value": "0.674", "datatype": "double"}        
-            ]
-           },
-           "modelingScenario": [
-             {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348976"},
-             {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348977"}
-            ]
-        }
-    }</span></pre>
+                    <pre><span class="inner-pre" style="font-size: 9px">{"specification":{"algorithm":
+        {"parameterBindings":[{"name":"StandardDeviationCutoff","value":"0.674","datatype":"double"}]
+        ,"id":"BIOCLIM"},
+    "modelingScenario":
+    [{"datasetURI":"http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348976"},
+    {"datasetURI":"http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348977"}],
+    "occurrenceDataID":"5565338"}}}</span></pre>
                 </div>
             </div>
         </div>

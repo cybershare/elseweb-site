@@ -22,20 +22,12 @@
             <form role="form" method="post" onsubmit="return false;">
            <div class="form-group">
              <textarea id="experiment" name="experiment" rows="15" style="width: 100%">
-                    {"specification": {
-                        "occurrenceDataID": "5565338",
-                        "algorithm": {
-                            "id": "BIOCLIM",
-                            "parameterBindings": [
-                                {"name": "StandardDeviationCutOff", "value": "0.674", "datatype": "double"}        
-                             ]
-                        },
-                        "modelingScenario": [
-                            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348976"},
-                            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348977"}
-                            ]
-                        }
-                    }</textarea>		                 
+{"specification":{"algorithm":{"parameterBindings":[{"name":"StandardDeviationCutoff","value":"0.674","datatype":"double"}]
+,"id":"BIOCLIM"},"modelingScenario":
+[{"datasetURI":"http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348976"},
+{"datasetURI":"http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348977"}],
+"occurrenceDataID":"5565338"}}
+</textarea>		                 
 
            </div>
                 <button type="button" class="btn btn-purchase pull-right" 
