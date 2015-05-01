@@ -11,6 +11,8 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="<?php echo isActive($pageName,"home")?>"><a href="<?php echo site_url('home') ?>">Home</a></li>
+                        <li class="<?php echo isActive($pageName,"linkeddata")?>"><a href="<?php echo site_url('linkeddata') ?>">Linked Data</a></li>
+                        <li class="<?php echo isActive($pageName,"demo")?>"><a href="<?php echo site_url('demo') ?>">Demo</a></li>
                         <li class="<?php echo isActive($pageName,"experiments")?>"><a href="<?php echo site_url('experiments') ?>">Experiments</a></li>
                         <li class="<?php echo isActive($pageName,"ontologies")?>"><a href="<?php echo site_url('ontologies') ?>">Ontologies</a></li>
                         <li class="<?php echo isActive($pageName,"services")?>"><a href="<?php echo site_url('services') ?>">Services</a></li>

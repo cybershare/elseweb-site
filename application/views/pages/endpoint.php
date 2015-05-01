@@ -21,28 +21,22 @@
         <div class="col-md-8 col-md-offset-2">
             <form role="form" method="post" onsubmit="return false;">
            <div class="form-group">
-             <textarea id="experiment" name="experiment" rows="22" style="width: 100%">
+             <textarea id="experiment" name="experiment" rows="15" style="width: 100%">
                     {"specification": {
-                        "occurrenceDataID": "1032789",
+                        "occurrenceDataID": "5565338",
                         "algorithm": {
-                            "id": "ANN",
+                            "id": "BIOCLIM",
                             "parameterBindings": [
-                                {"name": "Choice", "value": "1", "datatype": "integer"},
-                                {"name": "Epoch", "value": "5000000", "datatype": "integer"},
-                                {"name": "HiddenLayerNeurons", "value": "14", "datatype": "integer"},
-                                {"name": "LearningRate", "value": "0.3", "datatype": "double"},
-                                {"name": "MinimumError", "value": "0.01", "datatype": "double"},
-                                {"name": "Momentum", "value": "0.05", "datatype": "double"}         
-                                ]
+                                {"name": "StandardDeviationCutOff", "value": "0.674", "datatype": "double"}        
+                             ]
                         },
                         "modelingScenario": [
-                            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348882"},
-                            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348883"},
-                            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348884"}
+                            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348976"},
+                            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348977"}
                             ]
                         }
-                    }		                 
-             </textarea>
+                    }</textarea>		                 
+
            </div>
                 <button type="button" class="btn btn-purchase pull-right" 
                         onclick="genGUID('storeExperiment')">
@@ -56,7 +50,7 @@
         <div class="text-center col-md-8 col-md-offset-2">
             <p>
                Alternatively, you can POST experiment specifications to the 
-               <a href="./JSONSpecification">JSONSpecification Submission Service</a>. 
+               <a href="http://visko.cybershare.utep.edu/elseweb-endpoint/JSONSpecification">JSONSpecification Submission Service</a>. 
                Specifications posted to the JSONSpecification submission service should be bound to the 
                <b>jsonSpec</b> parameter.
             </p>

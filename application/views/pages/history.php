@@ -2,7 +2,7 @@
 <!-- Javascript dependencies -->
 <script type="text/javascript" src="<?php echo base_url(JS."history.js");?>"></script>
 
-<div class="container">
+<div class="container" style="min-height: 600px;">
     
     <div class="row">
         <div class="text-center feature-head">
@@ -19,7 +19,7 @@
                        <th>Timestamp</th>   
                        <th style='text-align:center;'>Success</th>
                        <th>Result URL</th>
-                       <th>Provenance ID</th>
+                       <th>Provenance URI</th>
                        <th style='text-align:center;'>Details</th>
                     </tr>
                 </thead>

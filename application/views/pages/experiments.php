@@ -32,33 +32,26 @@
             <div class="col-lg-6 col-sm-6">
                 <div class="content">
                     <h3 class="title">Option 2: Experiment Endpoint Service</h3>
-                    <p>The Experiment Interface presented above captures users selection in the form of an <a href="http://ontology.cybershare.utep.edu/ELSEWeb/linked-data/lifemapper/experiments/specifications/json/sample-specification.json">ELSEWeb experiment specification</a>. These specifications are posted to an underlying <a href=”<?php echo site_url('endpoint') ?>”>HTTP POST service</a>. Power users can generate their own JSON specifications and submit them to the service through the input text box or submit specifications programmatically.</p>
+                    <p>The Experiment Interface presented above captures users selection in the form of an <a href="http://ontology.cybershare.utep.edu/ELSEWeb/linked-data/lifemapper/experiments/specifications/json/sample-specification.json">ELSEWeb experiment specification</a>. These specifications are posted to an underlying <a href="<?php echo site_url('endpoint') ?>">HTTP POST service</a>. Power users can generate their own JSON specifications and submit them to the service through the input text box or submit specifications programmatically.</p>
                     <a href="<?php echo site_url('endpoint') ?>" class="btn btn-purchase">Submit a Specification</a></p>
                 </div>
             </div>
             <div class="col-lg-6 col-sm-6">
                 <div class="content">
-                    <pre><span class="inner-pre" style="font-size: 8px">{"specification": {
-    "id": "d046d1fa-98cc-4705-b44d-884c263bbcfa",
-    "occurrenceDataID": "1032789",
-    "algorithm": {
-        "id": "ANN",
-        "parameterBindings": [
-            {"name": "Choice", "value": "1", "datatype": "integer"},
-            {"name": "Epoch", "value": "5000000", "datatype": "integer"},
-            {"name": "HiddenLayerNeurons", "value": "14", "datatype": "integer"},
-            {"name": "LearningRate", "value": "0.3", "datatype": "double"},
-            {"name": "MinimumError", "value": "0.01", "datatype": "double"},
-            {"name": "Momentum", "value": "0.05", "datatype": "double"}
+                    <pre><span class="inner-pre" style="font-size: 9px">{"specification": {
+    "occurrenceDataID": "5565338",
+        "algorithm": {
+         "id": "BIOCLIM",
+            "parameterBindings": [
+            {"name": "StandardDeviationCutOff", "value": "0.674", "datatype": "double"}        
             ]
-        },
-        "modelingScenario": [
-            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348880"},
-            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348881"},
-            {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348884"}
+           },
+           "modelingScenario": [
+             {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348976"},
+             {"datasetURI": "http://visko.cybershare.utep.edu/linked-data/edac/services/dataset_348977"}
             ]
-    }
-}</span></pre>
+        }
+    }</span></pre>
                 </div>
             </div>
         </div>
@@ -68,11 +61,11 @@
         <div class="hiring">
                         <div class="col-lg-6 col-sm-6">
                 <div class="content">
-                    <pre><span class="inner-pre" style="font-size: 9px">{"executedSpecification": {
+                    <pre><span class="inner-pre" style="font-size: 10px">{"executedSpecification": {
     "successful": "true",
     "experimentResult": {
-        "resultURI": "http://visko.cybershare.utep.edu/linked-data/elseweb/sadi/experimentResult-ef92ec6c-fffe-444d-b052-ff99ac5fe358",
-        "resultURL": "http://lifemapper.org/services/sdm/experiments/999951"
+        "resultURI": "http://visko.cybershare.utep.edu/linked-data/elseweb/sadi/experimentResult-d76d82e2-bdab-4184-b555-ca010d8bc0ba",
+        "resultURL": "http://lifemapper.org/services/sdm/experiments/1434306"
         }
     }
 }</span></pre>

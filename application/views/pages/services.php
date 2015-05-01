@@ -62,7 +62,8 @@
                 <div class="content">
                     <h3 class="title">Scenario Poster Service</h3>
                     <p>Post scenarios (i.e., a bag or posted layers) to Lifemapper and saves the IDs to be referened by an experiment specification.</p>
-                    <a href="<?php echo VISKOSERVER."sadi-services-lifemapper/ScenarioLayerPoster";?>"><img width="450" class="img-responsive" src="<?php echo base_url(IMAGES."services/scenario-poster-service.png");?>" alt="scenario-poster-service"></a>                        
+                    <a href=""><img width="450" class="img-responsive" src="<?php echo base_url(IMAGES."services/scenario-poster-service.png");?>" alt="scenario-poster-service"></a>    
+                    <!-- -<?php echo VISKOSERVER."sadi-services-lifemapper/ScenarioLayerPoster";?> -->
                 </div>
             </div>
         </div>

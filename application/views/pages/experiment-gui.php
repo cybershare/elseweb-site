@@ -28,7 +28,7 @@
                 <div class="tab-panel" ng-show="panel.isSelected(1)" ng-controller="RegionController as regionCtrl"> 
                      <div class="row">
                           <div class="col-md-12 gray-bg" style="padding-bottom: 15px; border-radius: 3px;">
-                              <h4>Region</h4>
+                              <h4>Environmental Data Region</h4>
                               <p>Drag point in map to set bounding box for the experiment.
                                  Coordinates will update on mouse out event on rectangle layer.</p>
                               <input ng-model="experiment.coordinates" disabled="true" id="boundsText" class="form-control" placeholder= "e.g. 50, -65.123, 23, -126 (N, E, S, W)" type="text"/>
@@ -52,7 +52,7 @@
                 <div class="tab-panel" ng-show="panel.isSelected(2)">
                      <div class="row experiment-row">
                          <div class="col-md-12  gray-bg">
-                             <h4>Species</h4>
+                             <h4>Lifemapper Species Occurrence Sets</h4>
                              <p>Select species</p>
                              <form ng-controller="SpeciesController as speciesCtrl">
                                  <div class="form-group">
@@ -74,7 +74,7 @@
                 <div class="tab-panel" ng-show="panel.isSelected(3)"> 
                      <div class="row experiment-row" ng-controller="DataController as dataCrtl">
                          <div class="col-md-12 gray-bg">
-                             <h4>Data</h4>
+                             <h4>Environmental Data Filters</h4>
                              <p class="">Select up to 10 data sets</p>
                              <div><button ng-click="dataCrtl.addDataSet()" type="button" class="btn btn-purchase" >+ Add data set</button></div>
                              <div class="eq-len">
@@ -176,7 +176,7 @@
                <div class="tab-panel" ng-show="panel.isSelected(5)">
                    <div class="row experiment-row" ng-controller="SelectDataController as selectDataCtrl">
                         <div class="col-md-12 gray-bg">
-                            <h4>Retrived Datasets</h4>
+                            <h4>Environmental Dataset Selection</h4>
                             <p>Select up to X datasets for experiment submission.</p>
                                 <table class="table table-striped">
                                     <thead>

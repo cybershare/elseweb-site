@@ -38,7 +38,7 @@ function appendGUID(guid, base_url){
     experiment_json["specification"]["id"] = guid; //append generated experiment id
     experiment_json = JSON.stringify(experiment_json);  //json to string
     //alert(guid);              
-    //alert(experiment_json);
+    alert(experiment_json);
     runExperiment(experiment_json, base_url);
 }
 
