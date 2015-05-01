@@ -1922,7 +1922,11 @@ ul#filters > .active > span {
     color: #000;
 }
 
-/* Experiment GUI animations */
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
 
 
 
