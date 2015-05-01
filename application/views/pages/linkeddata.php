@@ -68,6 +68,25 @@
         ?set lifemapper:hasOccurrenceOfSpecies ?species.
         ?species lifemapper:hasGenusName ?name.
     }
+
+    #Sample 3:show me environmental data entities available in a boxed region
+
+    select distinct ?entity
+    from &lt;http://ontology.cybershare.utep.edu/ELSEWeb/linked-data/edac/services/wcs-services.owl&gt;
+    where
+    {
+        ?dataset elseweb-data:coversRegion ?region.
+        ?region elseweb-data:hasLeftLongitude ?llon.
+        ?region elseweb-data:hasRightLongitude ?rlon.
+        ?region elseweb-data:hasLowerLatitude ?llat.
+        ?region elseweb-data:hasUpperLatitude ?ulat.
+        filter(?llon <= -92.28515625)
+        filter(?rlon >= -72.7734375)
+        filter(?llat <= 39.50404070558425)
+        filter(?ulat >= 45.82879925192136)
+        ?dataset elseweb-data:hasDataBand ?band.
+        ?band elseweb-data:representsEntity ?entity.
+    }
                             
                        </span></pre>
                     </div>
