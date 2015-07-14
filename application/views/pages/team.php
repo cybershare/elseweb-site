@@ -17,11 +17,32 @@
                     <p class="text-muted">Principal Investigator</p>
                     <div class="team-social-link">
                         <a href="https://www.facebook.com/deana.pennington"><i class="icon-facebook"></i></a>
+                        <a href="http://ilink.cybershare.utep.edu/personalPages/personalpage/dpennington"><i class="icon-user"></i></a>
                     </div>
                     <div class="content">
                         <i>ddpennington@utep.edu</i>
                     </div>
                     <p>Interdisciplinary knowledge exchange processes, Geospatial, Data Science</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="person text-center">
+                    <img src="<?php echo base_url(IMAGES."team/nvillanueva.jpg");?>" alt="image">
+                </div>
+                <div class="person-info text-center">
+                    <h4>
+                        <a href="javascript:;">Natalia Villanueva</a>
+                    </h4>
+                    <p class="text-muted">Co-Principal Investigator</p>
+                    <div class="team-social-link">
+                        <a href="http://ilink.cybershare.utep.edu/personalPages/personalpage/nvillanuevarosales"><i class="icon-user"></i></a>
+                        <a href="https://www.linkedin.com/in/nataliavillanueva"><i class="icon-linkedin"></i></a>
+                    </div>
+                    <div class="content">
+                        <i>nvillanuevarosales@utep.edu</i>
+                    </div>
+                    <p>Semantic Web, Data Integration, Knowledge Negotiation</p>
                 </div>
             </div>
 
@@ -46,26 +67,6 @@
                     <p>Semantic Web, Visualization, and Provenance</p>
                 </div>
             </div>
-
-            <div class="col-lg-4">
-                <div class="person text-center">
-                    <img src="<?php echo base_url(IMAGES."team/nvillanueva.jpg");?>" alt="image">
-                </div>
-                <div class="person-info text-center">
-                    <h4>
-                        <a href="javascript:;">Natalia Villanueva</a>
-                    </h4>
-                    <p class="text-muted">  Semantic Web Consultant </p>
-                    <div class="team-social-link">
-                        
-                    </div>
-                    <div class="content">
-                        <i>nvillanuevarosales@utep.edu</i>
-                    </div>
-                    <p>Semantic Web</p>
-                </div>
-            </div>
-
         </div>
 
         <div class="row text-center">
