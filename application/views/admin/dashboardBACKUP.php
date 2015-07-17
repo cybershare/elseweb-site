@@ -31,7 +31,7 @@ class Dashboard extends CI_Controller
     }
 
    
-} 
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
