@@ -20,7 +20,7 @@
         
     </div>    
     
-    <script src="http://localhost/elseweb-site/resources/js/jquery-1.8.3.min.js"></script>
+    <script src="<?php echo base_url(JS."jquery-1.8.3.min.js");?>"></script>
     <script src="<?php echo base_url(JS."main.js");?>"></script>
      <?php if(!$this->session->userdata('is_logged_in')) { ?>
     <script type="text/javascript">
