@@ -17,7 +17,7 @@
                         <li class="<?php echo isActive($pageName,"ontologies")?>"><a href="<?php echo site_url('ontologies') ?>">Ontologies</a></li>
                         <li class="<?php echo isActive($pageName,"services")?>"><a href="<?php echo site_url('services') ?>">Services</a></li>
                         <li class="<?php echo isActive($pageName,"team")?>"><a href="<?php echo site_url('team') ?>">Team</a></li>          
-                        <li class="<?php echo isActive($pageName,"publications")?>"><a href="<?php echo site_url('publications') ?>">Publications</a></li>
+                        <li class="<?php echo isActive($pageName,"publications")?>"><a href="<?php echo site_url('publications') ?>">Resources</a></li>
 
                        <?php if(!$this->session->userdata('is_logged_in')) { ?>
                         <li class="dropdown <?php echo isActive($pageName,"login/new_user")?>" id="menuLogin">

@@ -48,6 +48,7 @@ define('JS','resources/js/');
 define('CSS','resources/css/');
 define('UPLOAD','resources/upload/');
 define('ASSETS','resources/assets/');
+define('DOCS','resources/docs/');
 define('LODSPEAKR', 'http://visko.cybershare.utep.edu/linked-data/');
 define('ONTPREFIX', 'http://ontology.cybershare.utep.edu/ELSEWeb/');
 define("ENDPOINT", 'http://visko.cybershare.utep.edu/elseweb-endpoint/');
