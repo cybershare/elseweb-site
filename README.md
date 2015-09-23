@@ -1,4 +1,4 @@
-### ELSEWeb Frontend based on codeigniter skeleton by Alessanfro Arnodo
+### ELSEWeb Frontend based on codeigniter skeleton by Alessandro Arnodo
 ---------------------------------------------------
 
 
@@ -7,6 +7,10 @@
 
 ####
 Luis Garnica (ELSEWeb Site Developer)
+
++   [LinkedIn Page](https://www.linkedin.com/pub/luis-garnica/38/26/853)
+
++	<mailto:lagarnicachavira@miners.utep.edu>
 
 Alessandro Arnodo (Codeigniter Skeleton Author)
 
