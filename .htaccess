@@ -4,8 +4,9 @@ AddDefaultCharset UTF-8
   
   	# my url is http://localhost/arny
     #RewriteBase /arny/
-	# set your own
-           RewriteBase /elseweb/  
+	# Production Environment:
+         RewriteBase /elseweb/  
+        # Development Environment:
 	#  RewriteBase /elseweb-site/
 	
     #Removes access to the system folder by users.

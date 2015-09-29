@@ -87,7 +87,19 @@
         ?dataset elseweb-data:hasDataBand ?band.
         ?band elseweb-data:representsEntity ?entity.
     }
-                            
+
+    #Sample 4: show me all edac data access services and metadata URLs in terms of DCAT and ELSEWeb vocabulary (uses mappings alignment with LOD ontologies)
+
+    select ?dataset ?capabilitiesURL ?jsonURL
+    {
+            ?dataset a dcat:Dataset.
+            ?dataset elseweb-data:hasManifestation	
+                    [
+                            elseweb-data:hasCapabilitiesDocumentURL ?capabilitiesURL;
+                            elseweb-edac:hasJSONCapabilitiesDigestURL ?jsonURL
+                    ]
+    }
+                 
                        </span></pre>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
                          <table class="table table-striped table-bordered">
                              <tr>
                                 <th>Publication</th>
-                                <th>Download</th>
+                                <th>Download/Link</th>
                              </tr>
                              <tr>
                                  <td>Del Rio, N., Villanueva-Rosales, N., Pennington, D., Benedict, K., Stewart, A., & Grady, C. J. (2013, December). Elseweb meets sadi: Supporting data-to-model integration for biodiversity forecasting. In Discovery Informatics Symposium.</td>
@@ -29,7 +29,7 @@
                                  <td>Villanueva-Rosales, N., Garnica Chavira, L., Del Rio, N., Pennington, D.: eScience through the integration of data and models: a biodiversity scenario. In: 11th IEEE International Conference on eScience (2015) --Pending Web Publication--</td>
                                  <td class="text-center">
                                     <button type="button" class="btn btn-link">
-                                        <a  href="" target="_blank"><span class="glyphicon glyphicon-paperclip"></span></a>
+                                        <a  href="" target="_blank"><span class="glyphicon glyphicon-link"></span></a>
                                     </button>
                                  </td>
                              </tr>
