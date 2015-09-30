@@ -7,8 +7,8 @@
                         <h3 class="title" >SPARQL Endpoint Service</h3>
                         <p>ELSEWeb's Linked Data is managed and stored by an instance of Virtuoso's Triple Store.</p>
                         <p>
-                            Try out SPARQL queries through the Virtuoso Endpoint Service by
-                            <a href="http://visko.cybershare.utep.edu/sparql" target="_blank">clicking here to access.</a>
+                            Try out SPARQL queries through the Virtuoso Endpoint Service:
+                        <p><a href="http://visko.cybershare.utep.edu/sparql" target="_blank" class="btn btn-purchase">Click here to access</a></p>
                         </p>
                     </div>
                 </div>

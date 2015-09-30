@@ -18,7 +18,7 @@
                                 <th>Download/Link</th>
                              </tr>
                              <tr>
-                                 <td>Del Rio, N., Villanueva-Rosales, N., Pennington, D., Benedict, K., Stewart, A., & Grady, C. J. (2013, December). Elseweb meets sadi: Supporting data-to-model integration for biodiversity forecasting. In Discovery Informatics Symposium.</td>
+                                 <td>Del Rio, N., Villanueva-Rosales, N., Pennington, D., Benedict, K., Stewart, A., & Grady, C. J.: Elseweb meets sadi: Supporting data-to-model integration for biodiversity forecasting. In: Discovery Informatics Symposium (2013)</td>
                                  <td class="text-center">
                                      <button type="button" class="btn btn-link">
                                          <a  href="https://www.aaai.org/ocs/index.php/FSS/FSS13/paper/viewFile/7631/7488" target="_blank"><span class="glyphicon glyphicon-paperclip"></span></a>
@@ -26,7 +26,15 @@
                                  </td>
                              </tr>
                              <tr>
-                                 <td>Villanueva-Rosales, N., Garnica Chavira, L., Del Rio, N., Pennington, D.: eScience through the integration of data and models: a biodiversity scenario. In: 11th IEEE International Conference on eScience (2015) --Pending Web Publication--</td>
+                                 <td>Villanueva-Rosales, N., Garnica Chavira, L., Del Rio, N., Pennington, D.: eScience through the integration of data and models: a biodiversity scenario. In: 11th IEEE International Conference on eScience (2015) -- in press --</td>
+                                 <td class="text-center">
+                                    <button type="button" class="btn btn-link">
+                                        <a  href="" target="_blank"><span class="glyphicon glyphicon-link"></span></a>
+                                    </button>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td>Villanueva-Rosales, N., Del Rio, N., Pennington, D., Garnica Chavira, L.: Semantic Bridges for Biodiversity Sciences. In: The 14th International Semantic Web Conference (2015) -- in press --</td>
                                  <td class="text-center">
                                     <button type="button" class="btn btn-link">
                                         <a  href="" target="_blank"><span class="glyphicon glyphicon-link"></span></a>
