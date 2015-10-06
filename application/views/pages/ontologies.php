@@ -22,11 +22,11 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <h4 class="title">ELSEWEB-Data</h4> 
-                                <a href="<?php echo ONTPREFIX."elseweb-data.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-data.png");?>" alt="elseweb-data"></a> 
+                                <a href="<?php echo ONTPREFIX."elseweb-data.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-data-v3.png");?>" alt="elseweb-data"></a> 
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <h4 class="title">ELSEWEB-EDAC</h4> 
-                                <a href="<?php echo ONTPREFIX."elseweb-edac.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-edac.png");?>" alt="elseweb-edac"></a>  
+                                <a href="<?php echo ONTPREFIX."elseweb-edac.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-edac-v3.png");?>" alt="elseweb-edac"></a>  
                             </div>
                         </div>
                         
@@ -53,11 +53,11 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <h4 class="title">ELSEWEB-Modelling</h4> 
-                                <a href="<?php echo ONTPREFIX."elseweb-modelling.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-modelling.png");?>" alt="elseweb-modelling"></a> 
+                                <a href="<?php echo ONTPREFIX."elseweb-modelling.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-modelling-v3.png");?>" alt="elseweb-modelling"></a> 
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <h4 class="title">ELSEWEB-Lifemapper</h4> 
-                                <a href="<?php echo ONTPREFIX."elseweb-lifemapper.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-lifemapper.png");?>" alt="elseweb-lifemapper"></a>  
+                                <a href="<?php echo ONTPREFIX."elseweb-lifemapper.owl";?>"><img class="img-responsive displayed" width="850" src="<?php echo base_url(IMAGES."elseweb-lifemapper-v3.png");?>" alt="elseweb-lifemapper"></a>  
                             </div>
                         </div>
                         
