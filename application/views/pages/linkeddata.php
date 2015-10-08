@@ -25,12 +25,11 @@
     #prefixes
 
     # define the mappings to be used
-    define input:inference "http://ontology.cybershare.utep.edu/ELSEWeb/mappings/elseweb-mappings.owl"
+    define input:inference "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-mappings-v2.owl"
 
     # custom ELSEWeb prefixes
     prefix elseweb-data: &lt;http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl#&gt;
     prefix elseweb-edac: &lt;http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#&gt;
-    prefix elseweb-lifemapper: &lt;http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#&gt;
     prefix lifemapper: &lt;http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper.owl#>
 
     # base LOD prefixes

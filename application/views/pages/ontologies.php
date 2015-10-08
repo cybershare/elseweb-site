@@ -35,7 +35,7 @@
                               <a href="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl#</a> <br>
                               <a href="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#</a><br>
                               <a href="http://ontology.cybershare.utep.edu/ELSEWeb/linked-data/edac/services/wcs-services.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/linked-data/edac/services/wcs-services.owl#</a><br>
-                              <a href="http://ontology.cybershare.utep.edu/ELSEWeb/mappings/elseweb-mappings.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/mappings/elseweb-mappings.owl#</a>
+                              <a href="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-mappings-v2.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/mappings/elseweb-mappings.owl#</a>
                           </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                              <a href="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper.owl#</a><br>
                              <a href="http://ontology.cybershare.utep.edu/ELSEWeb/linked-data/lifemapper/occurrences-v2/species-occurrences-v2.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/linked-data/lifemapper/occurrences-v2/species-occurrences-v2.owl#</a><br>
                              <a href="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper-parameters.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper-parameters.owl#</a><br>
-                             <a href="http://ontology.cybershare.utep.edu/ELSEWeb/mappings/elseweb-mappings.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/mappings/elseweb-mappings.owl#</a>
+                             <a href="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-mappings-v2.owl#">http://ontology.cybershare.utep.edu/ELSEWeb/mappings/elseweb-mappings.owl#</a>
                         </div>     
                     </div>
                 </div>
